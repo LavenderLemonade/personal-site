@@ -32,22 +32,29 @@ theHeader.style.color = 'blue'; //coloring the text
 
 boxGrab.appendChild(theHeader);  //then adding it to the DOM 
 
-const thisDiv = document.createElement('div');
-thisDiv.style.border = "2px solid black";
-thisDiv.style.backgroundColor = "pink";
-thisDiv.classList.add("open-borders");
+const thisDiv = document.createElement('div'); //making another div
+thisDiv.style.border = "2px solid black"; //giving the div a border and a color
+thisDiv.style.backgroundColor = "pink"; //giving the div a background color
+thisDiv.classList.add("open-borders"); //adding a class to the div
 
-boxGrab.appendChild(thisDiv);
-const evenSmaller = document.querySelector(".open-borders");
+boxGrab.appendChild(thisDiv);//this added the div to the overall div that is in the class
 
-const tinyHead = document.createElement('h1');
-tinyHead.textContent = "I'm in a div";
+const evenSmaller = document.querySelector(".open-borders"); //this is a selector for the div we just made
 
-const littlePara = document.createElement('p');
-littlePara.textContent = "ME TOO!";
+const tinyHead = document.createElement('h1'); //this makes an h1 element
+tinyHead.textContent = "I'm in a div"; //this one makes some text content for the h1 element
 
-evenSmaller.appendChild(tinyHead);
-evenSmaller.appendChild(littlePara);
+const littlePara = document.createElement('p'); //this one makes a paragraph element
+littlePara.textContent = "ME TOO!"; //this one adds text content to the paragraph element
+
+evenSmaller.appendChild(tinyHead); //now we add the h1 element to the div we made earlier
+evenSmaller.appendChild(littlePara); //and now we add the paragraph element to the div we made earlier'
+
+//alright, now let's start letning how to work with like, events and stuff 
+
+const btn = document.querySelector('#btn'); //we grabbing that btn id 
+btn.addEventListener('click', () => { alert("Hello World!")}); //so,when the button is clicked, we do the alert
+
 
 
 
