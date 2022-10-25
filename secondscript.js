@@ -55,6 +55,6 @@ evenSmaller.appendChild(littlePara); //and now we add the paragraph element to t
 const btn = document.querySelector('#btn'); //we grabbing that btn id 
 btn.addEventListener('click', () => { alert("Hello World!")}); //so,when the button is clicked, we do the alert
 
-
+btn.addEventListener('click', function(e) { console.log(e.target)}); //what this does is that it gives you info on the target of the event
 
 
