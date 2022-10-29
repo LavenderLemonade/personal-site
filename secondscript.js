@@ -57,4 +57,26 @@ btn.addEventListener('click', () => { alert("Hello World!")}); //so,when the but
 
 btn.addEventListener('click', function(e) { console.log(e.target)}); //what this does is that it gives you info on the target of the event
 
+function Book(title, pages, isRead)
+{
+    this.title = title;
+    this.pages = pages;
+    this.isRead = isRead;
+}
+
+const Downfall = new Book('Downfall', '300', true);
+
+console.log(Downfall.title);
+console.log(Downfall.pages);
+console.log(Downfall.isRead);
+
+function Manga(title, author){
+    this.title = title;
+    this.mangaka = author;
+}
+
+Manga.prototype.whoWroteThis = function(){ console.log(this.mangaka)};
+
+const Solanin = new Manga('Solanin', 'Inio Asano');
+Solanin.whoWroteThis();
 
