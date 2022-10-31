@@ -24,7 +24,7 @@ function addToLibrary()
     {
         if (myLibrary[i].title == bookTitle )
         {
-            console.log("This book already exists.")
+            alert("This book already exists.")
             return;
         }
     }
