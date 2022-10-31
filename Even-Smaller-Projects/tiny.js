@@ -9,6 +9,9 @@ function Book(title,author) //this is the Book class that we use in order to mak
 
 function displayTheLibrary()
 {
+    const deleteButton = document.createElement('button');
+    deleteButton.textContent = "Delete";
+    deleteButton.className = "removalButton";
     //So, we're going to make a span element that we can affect with CSS
     const titleSpan = document.createElement('span');
     titleSpan.className = "getBold";
@@ -25,8 +28,20 @@ function displayTheLibrary()
     newDiv.innerHTML += myLibrary[myLibrary.length-1].title + ' ';
     newDiv.append(authorSpan);
     newDiv.innerHTML += myLibrary[myLibrary.length-1].author + ' ';
+    newDiv.append(deleteButton);
     //now that everything has been added, we can add out fully-assembled div to the container 
     checkGrab.append(newDiv); //this finally adds the new div to the container div 
+    makeAnEventListener();
+}
+
+function deleteFromLibrary()
+{
+    let index = myLibrary.indexOf(event.target.parentElement.className);
+    console.log(index);
+    myLibrary[index+1] = new Book;
+    event.target.parentElement.remove();
+
+  
 }
 
 function addToLibrary()
@@ -48,5 +63,16 @@ function addToLibrary()
     
 }
 
+function makeAnEventListener()
+{
+    const hitButton = checkGrab.querySelector(".removalButton");
+    if(hitButton)
+    {
+        hitButton.addEventListener('click', event => {deleteFromLibrary()} );
+    }
+}
+
 const pressButton = document.querySelector(".btn");
 pressButton.addEventListener('click',event=> {addToLibrary()});
+
+
