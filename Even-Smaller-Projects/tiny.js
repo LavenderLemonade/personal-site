@@ -9,9 +9,23 @@ function Book(title,author) //this is the Book class that we use in order to mak
 
 function displayTheLibrary()
 {
+    //So, we're going to make a span element that we can affect with CSS
+    const titleSpan = document.createElement('span');
+    titleSpan.className = "getBold";
+    titleSpan.textContent = 'Book Title: ';
+    //Another span element, purely so we can make the text on these bold
+    const authorSpan = document.createElement('span');
+    authorSpan.className = "getBold";
+    authorSpan.textContent = 'Book Author: ';
+    // Now we can start making the div that'll hold everything
     const newDiv = document.createElement('div'); //this creates a new div element that we will add to the container div
     newDiv.className = myLibrary[myLibrary.length-1].title; //this adds a class to the new div that is the same as the title of the current book
-    newDiv.textContent='Book Title: '+ myLibrary[myLibrary.length-1].title + ' Book Author: ' + myLibrary[myLibrary.length-1].author; //this adds text to the div
+    //the order in which we add things to the div matters 
+    newDiv.append(titleSpan);
+    newDiv.innerHTML += myLibrary[myLibrary.length-1].title + ' ';
+    newDiv.append(authorSpan);
+    newDiv.innerHTML += myLibrary[myLibrary.length-1].author + ' ';
+    //now that everything has been added, we can add out fully-assembled div to the container 
     checkGrab.append(newDiv); //this finally adds the new div to the container div 
 }
 
