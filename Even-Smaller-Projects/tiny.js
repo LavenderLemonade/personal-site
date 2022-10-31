@@ -1,49 +1,38 @@
-let thisLib = [];
-let counter = 0;
-const makeOne = document.createElement('div');
+let myLibrary = []; //this is the array that's gonna hold the book objects we make 
+let checkGrab = document.querySelector("#container");
 
-function Book(title, author)
+function Book(title,author) //this is the Book class that we use in order to make Book objects
 {
     this.title = title;
     this.author = author;
 }
 
+function displayTheLibrary()
+{
+    const newDiv = document.createElement('div'); //this creates a new div element that we will add to the container div
+    newDiv.className = myLibrary[myLibrary.length-1].title; //this adds a class to the new div that is the same as the title of the current book
+    newDiv.textContent='Book Title: '+ myLibrary[myLibrary.length-1].title + ' Book Author: ' + myLibrary[myLibrary.length-1].author; //this adds text to the div
+    checkGrab.append(newDiv); //this finally adds the new div to the container div 
+}
+
 function addToLibrary()
 {
-    let bookName = prompt('What is the name of the book?');
-    let bookAuthor = prompt('Who wrote the book?');
-
-    theBook = new Book(bookName,bookAuthor);
-
-    thisLib.push(theBook);
-}
-
-let num = prompt('How many books do you want to add?');
-
-for(i = 0; i < num; i++)
-{
-    addToLibrary();
-    counter +=1;
-}
-
-console.log(thisLib);
-
-const takeContainer = document.querySelector(".container"); //grabbing the container div
-
-for(i = 0; i < num; i++)
-{
+    const bookTitle = prompt("What's the title of the Book?"); //give the book a title
+    const bookAuthor = prompt("Who's the author of the book?"); //give the book an author
+    //let's check if the book already exists
+    for(i = 0;i < myLibrary.length; i++)
+    {
+        if (myLibrary[i].title == bookTitle )
+        {
+            console.log("This book already exists.")
+            return;
+        }
+    }
+    newBook = new Book(bookTitle,bookAuthor);
+    myLibrary.push(newBook);
+    displayTheLibrary();
     
-    makeOne.className = thisLib[i].title;
-    makeOne.textContent = 'Book Title: ' + thisLib[i].title + ' ' + 'Book Author: ' + thisLib[i].author;
-    takeContainer.append(makeOne);
 }
 
-const bigButton = document.querySelector(".btn");
-bigButton.addEventListener('click', event => { 
-    addToLibrary();
-    makeOne.className = thisLib[counter].title;
-    makeOne.textContent = 'Book Title: ' + thisLib[counter].title + ' ' + 'Book Author: ' + thisLib[counter].author;
-    takeContainer.append(makeOne);
-    counter+=1;
-
-});
+const pressButton = document.querySelector(".btn");
+pressButton.addEventListener('click',event=> {addToLibrary()});
