@@ -36,9 +36,11 @@ function displayTheLibrary()
 
 function deleteFromLibrary()
 {
-    let index = myLibrary.indexOf(event.target.parentElement.className);
+    let bookName = event.target.parentElement.className;
+    let index = myLibrary.map(object => object.title).indexOf(bookName);
     console.log(index);
-    myLibrary[index+1] = new Book;
+
+    console.log(event.target.parentElement.className)
     event.target.parentElement.remove();
 
   
@@ -59,20 +61,16 @@ function addToLibrary()
     }
     newBook = new Book(bookTitle,bookAuthor);
     myLibrary.push(newBook);
+    console.log(myLibrary);
     displayTheLibrary();
     
 }
 
 function makeAnEventListener()
 {
-    const hitButton = checkGrab.querySelector(".removalButton");
-    if(hitButton)
-    {
-        hitButton.addEventListener('click', event => {deleteFromLibrary()} );
-    }
+    const hitButton = checkGrab.querySelectorAll(".removalButton");
+    hitButton.forEach(item => { item.addEventListener('click', event => {deleteFromLibrary()})});
 }
 
 const pressButton = document.querySelector(".btn");
 pressButton.addEventListener('click',event=> {addToLibrary()});
-
-
