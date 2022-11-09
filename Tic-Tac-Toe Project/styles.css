@@ -1,0 +1,32 @@
+html, body
+{
+    height: 100%;
+}
+
+body
+{
+    margin: 0%;
+    background-color: peachpuff;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#container
+{
+    height: 50% ;
+    width: 50%;
+    background-color: aqua;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#game-board
+{
+    height: 50%;
+    width: 50%;
+    background-color: antiquewhite;
+}
