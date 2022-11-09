@@ -1,0 +1,1 @@
+# Working on solidifying some ES6 principles so I can jump into React more
