@@ -24,6 +24,8 @@ main
 
     border: 2px solid black;
     border-radius: 8%;
+
+    box-shadow: 10px 10px 5px lightgray;
 }
 
 #top-container
@@ -54,8 +56,6 @@ main
 
     font-family: Varela;
     font-size: 36px;
-    
-    
 }
 
 a
