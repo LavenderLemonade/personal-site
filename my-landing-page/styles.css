@@ -1,5 +1,6 @@
 html,body{
     height: 100%;
+    background-color: #FBCEB1;
 }
 
 main
@@ -8,6 +9,7 @@ main
     display: flex;
     justify-content: center;
     align-items: center;
+    
 }
 
 @font-face {
@@ -23,9 +25,11 @@ main
     width: 900px;
 
     border: 2px solid black;
-    border-radius: 8%;
+    border-radius: 5%;
 
     box-shadow: 10px 10px 5px lightgray;
+
+    background-color: white;
 }
 
 #top-container
@@ -80,8 +84,14 @@ a
     margin-left: 10%;
     margin-top: 10%;
 
+    transition: all .07s ease;
+
     border: 1px solid black;
     border-radius:inherit;
+}
+.playing
+{
+    transform: scale(1.1);
 }
 
 #right-column
