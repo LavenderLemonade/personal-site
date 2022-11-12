@@ -1,0 +1,100 @@
+html,body{
+    height: 100%;
+}
+
+main
+{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@font-face {
+    font-family: Varela;
+    src: url(Fonts/Varela/VarelaRound-Regular.ttf);
+}
+#name-card
+{
+    display: flex;
+    flex-direction: column;
+
+    height:508px;
+    width: 900px;
+
+    border: 2px solid black;
+    border-radius: 8%;
+}
+
+#top-container
+{
+    display: flex;
+    flex-direction: row;
+
+    height: 66%;
+}
+
+#name-card > #line
+{
+    align-self: center;
+    padding: 0%;
+    margin: 0%;
+    background-color: black;
+    height: 1px;
+    width: 80%;
+}
+
+#bottom-container
+{
+    height: 33%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30%;
+
+    font-family: Varela;
+    font-size: 36px;
+    
+    
+}
+
+a
+{
+    text-decoration: none;
+}
+
+#profile-picture
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    
+    border-radius: 5%;
+}
+
+#profile-picture > img{
+    height: 70%;
+    width: 70%;
+
+    margin-left: 10%;
+    margin-top: 10%;
+
+    border: 1px solid black;
+    border-radius:inherit;
+}
+
+#right-column
+{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    
+    font-family: Varela;
+    font-size: 36px;
+}
+
+
+
