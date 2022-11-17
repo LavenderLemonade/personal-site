@@ -1,6 +1,16 @@
 // this grabs the container in the HTML file
 const main = document.getElementById('container');
 
+//let's make some header and footer divs to hold info like the title and stuff
+//this one is for the header
+const headerDiv = document.createElement('div');
+headerDiv.classList.add('header');
+headerDiv.textContent = 'Here is the header!'
+//this is for the footer
+const footerDiv = document.createElement('div');
+footerDiv.classList.add('footer');
+footerDiv.textContent = 'Here is the footer!'
+
 //now I want to make the divs that will hold the button and the results
 
 const playerBtn = document.createElement('button'); //button for the player
@@ -14,16 +24,22 @@ const computerDiv = document.createElement('div'); //div for the computer stuff
 computerDiv.classList.add('computer');
 computerDiv.textContent = "PC Choice goes here!";
 
+//I also now need a middle div that will be a flex container to hold everything else
+const midDiv = document.createElement('div');
+midDiv.setAttribute('id', 'middle');
 
 //now we need to add these things to the main div 
 
 //first we have to add the button to the div 
-
 playerDiv.appendChild(newImage);
 playerDiv.append(playerBtn);
+//now I need to add divs to the middle div
+midDiv.append(playerDiv);
+midDiv.append(computerDiv);
 //now we add them to the main div
-main.append(playerDiv);
-main.append(computerDiv);
+main.append(headerDiv);
+main.append(midDiv);
+main.append(footerDiv);
 
 //so, let's make the function that will run when the player clicks the button 
 //the player should be able to choose from rock paper or scissors 
