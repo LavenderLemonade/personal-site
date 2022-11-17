@@ -5,11 +5,10 @@ const main = document.getElementById('container');
 //this one is for the header
 const headerDiv = document.createElement('div');
 headerDiv.classList.add('header');
-headerDiv.textContent = 'Here is the header!'
+headerDiv.textContent = 'Rock, Paper, Scissors!'
 //this is for the footer
 const footerDiv = document.createElement('div');
 footerDiv.classList.add('footer');
-footerDiv.textContent = 'Here is the footer!'
 
 //now I want to make the divs that will hold the button and the results
 
@@ -22,7 +21,6 @@ const newImage = document.createElement('img');
 
 const computerDiv = document.createElement('div'); //div for the computer stuff
 computerDiv.classList.add('computer');
-computerDiv.textContent = "PC Choice goes here!";
 
 //I also now need a middle div that will be a flex container to hold everything else
 const midDiv = document.createElement('div');
@@ -32,7 +30,7 @@ midDiv.setAttribute('id', 'middle');
 
 //first we have to add the button to the div 
 playerDiv.appendChild(newImage);
-playerDiv.append(playerBtn);
+footerDiv.append(playerBtn);
 //now I need to add divs to the middle div
 midDiv.append(playerDiv);
 midDiv.append(computerDiv);
@@ -44,11 +42,18 @@ main.append(footerDiv);
 //so, let's make the function that will run when the player clicks the button 
 //the player should be able to choose from rock paper or scissors 
 
+let playerCounter = 0;
+let computerCounter = 0;
+
 function compChoice()
 {
+    if (computerDiv.firstChild != null)
+    {
+        computerDiv.removeChild(computerDiv.firstChild);
+    }
+
     const choices = ['Rock', 'Paper', 'Scissors'];
     let theChoice = choices[Math.floor(Math.random() * choices.length)];
-    computerDiv.textContent = theChoice;
 
     if (theChoice == 'Rock')
     {
@@ -100,12 +105,16 @@ function makeChoice()
         if (opponentChoice == 'Paper')
         {
             console.log('You lose!');
+            computerCounter++;
         }
 
         if (opponentChoice == 'Scissors')
         {
             console.log('You win!');
+            playerCounter++;
         }
+
+       
     }
 
     if (ask == 'Paper')
@@ -119,12 +128,16 @@ function makeChoice()
         if (opponentChoice == 'Scissors')
         {
             console.log('You lose!');
+            computerCounter++;
         }
 
         if (opponentChoice == 'Rock')
         {
             console.log('You win!');
+            playerCounter++;
         }
+
+        
     }
 
     if (ask == 'Scissors')
@@ -138,13 +151,19 @@ function makeChoice()
         if (opponentChoice == 'Rock')
         {
             console.log('You lose!');
+            computerCounter++;
         }
 
         if (opponentChoice == 'Paper')
         {
             console.log('You win!');
+            playerCounter++;
         }
+
+        
     }
+
+    headerDiv.textContent = `Player: ${playerCounter}  Computer: ${computerCounter}`;
 }
 
 playerBtn.addEventListener('click', event => makeChoice());
