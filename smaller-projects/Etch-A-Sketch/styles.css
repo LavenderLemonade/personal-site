@@ -1,0 +1,51 @@
+html, body{
+    height: 100%;
+    width: 100%;
+}
+
+#container
+{
+    height: 100%;
+    width: 100%;
+
+    align-items: center;
+    justify-content: center;
+
+    display: flex;
+    flex-direction: column;
+}
+
+#up-here
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.RowHolder
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 50px;
+    width: auto;
+
+    background-color: purple;
+}
+
+.RowElement
+{
+    height: 50px;
+    width: 50px;
+
+    border: 2px solid green;
+
+    background-color: pink;
+}
+
+.changed
+{
+    background-color: salmon;
+}
