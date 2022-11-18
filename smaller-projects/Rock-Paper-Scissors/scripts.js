@@ -166,4 +166,53 @@ function makeChoice()
     headerDiv.textContent = `Player: ${playerCounter}  Computer: ${computerCounter}`;
 }
 
+function resetGame() 
+{
+    console.log('we in here');
+    if (playerCounter == 5)
+    {
+        headerDiv.removeEventListener('DOMSubtreeModified',checkWinner,true);
+        headerDiv.textContent = 'You Win!';
+    }
+
+    if (computerCounter == 5)
+    {
+        headerDiv.removeEventListener('DOMSubtreeModified',checkWinner,true);
+        headerDiv.textContent = 'Computer Wins!';
+    }
+
+    playerBtn.remove();
+
+    resetButton = document.createElement('button');
+    resetButton.textContent = 'Play Again?'
+    footerDiv.append(resetButton);
+
+    resetButton.addEventListener('click', event => {
+        resetButton.remove();
+
+        const playerBtn = document.createElement('button');
+        playerBtn.textContent = 'Click Me Player';
+        footerDiv.append(playerBtn);
+        playerBtn.addEventListener('click', event => makeChoice());
+        playerCounter = 0;
+        computerCounter = 0;
+    });
+}
+
+function checkWinner()
+{
+    console.log('in the function');
+    if (playerCounter === 5)
+    {
+        resetGame();
+    }
+
+    if (computerCounter === 5)
+    {
+        resetGame();
+    }
+}
+
 playerBtn.addEventListener('click', event => makeChoice());
+headerDiv.addEventListener('DOMSubtreeModified', checkWinner,true);
+
