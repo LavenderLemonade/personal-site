@@ -89,6 +89,7 @@ a
     border: 1px solid black;
     border-radius:inherit;
 }
+
 .playing
 {
     transform: scale(1.1);

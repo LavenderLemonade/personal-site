@@ -1,13 +1,10 @@
-html, body
-{
+html, body{
     height: 100%;
+    width: 100%;
 }
 
 body
 {
-    margin: 0%;
-    background-color: peachpuff;
-
     display: flex;
     justify-content: center;
     align-items: center;
@@ -15,18 +12,30 @@ body
 
 #container
 {
-    height: 50% ;
-    width: 50%;
-    background-color: aqua;
-
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    height: 80%;
+    width: 80%;
 }
 
-#game-board
+.Row
 {
-    height: 50%;
-    width: 50%;
-    background-color: antiquewhite;
+    display: flex;
+    height: 400px;
+    width: 1000px;
+
+    background-color: lightblue;
+}
+
+.SquareElement
+{
+    height: 100%;
+    width: 33%;
+
+    border: 1px solid black;
+
+    background-color: lightcoral;
 }
