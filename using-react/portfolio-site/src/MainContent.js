@@ -1,8 +1,13 @@
+import { Link } from "react-router-dom";
+
 const MainContent = () => {
     return (
         <div className="stuff">
             <div className="top-left">
-                Top Left
+                <Link to='/projects/sketch'>
+                    Top Left
+                </Link>
+
             </div>
 
             <div className="top-right">
